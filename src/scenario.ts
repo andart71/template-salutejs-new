@@ -8,11 +8,15 @@ import { SmartAppBrainRecognizer } from '@salutejs/recognizer-smartapp-brain'
 import model from './intents.json'
 
 const intents = createIntents(model.intents)
-const { intent, action, regexp } = createMatchers<SaluteRequest, typeof intents>();
+const { intent, text } = createMatchers<SaluteRequest, typeof intents>();
 
 const userScenario = createUserScenario({
-    help: {
-        match: intent('/Help'),
+   help: {
+       match: intent('/Help'),
+       handle: HelpHandler
+   },
+    help2: {
+       match: text('Не знаю'),
         handle: HelpHandler
     }
 })
@@ -23,7 +27,7 @@ const systemScenario = createSystemScenario({
 })
 
 const scenarioWalker = createScenarioWalker({
-    recognizer: new SmartAppBrainRecognizer("f5559b6c-ba0b-4962-96cb-0d55076665f8"),
+    recognizer: new SmartAppBrainRecognizer("8f036110-40be-4491-b18e-84d02669b7e1"),
     intents,
     userScenario,
     systemScenario
