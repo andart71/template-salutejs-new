@@ -1,0 +1,32 @@
+{
+  "intents": {
+    "/пока": {
+      "matchers": [
+        {
+          "type": "phrase",
+          "rule": "пока"
+        }
+      ],
+      "variables": {}
+    },
+    "/привет": {
+      "matchers": [
+        {
+          "type": "phrase",
+          "rule": "привет"
+        }
+      ],
+      "variables": {}
+    },
+    "/Help": {
+      "matchers": [
+        {
+          "type": "phrase",
+          "rule": "помощь"
+        }
+      ],
+      "variables": {}
+    }
+  },
+  "entities": {}
+}
